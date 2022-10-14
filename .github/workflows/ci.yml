@@ -1,5 +1,10 @@
 name: "CI (Integração contínua): Main Workflow"
 
+env:
+  VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+  VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+  VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+
 on:
   pull_request:
     types: [opened, synchronize]
@@ -27,4 +32,3 @@ jobs:
 
       - name: Run preview deploy
         run: yarn deploy:preview
-

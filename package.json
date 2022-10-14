@@ -1,5 +1,6 @@
 {
   "name": "github-actions-front-end",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Lucas Aguiar <lucas.abreu@redeceler.com.br>",
@@ -16,7 +17,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "yarn build && npx vercel ./build --confirm --no-clipboard --prod --token=$VERCEL_TOKEN",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn build && npx vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
     "deploy:preview": "node ./scripts/pullRequestPreview.js"
   },
   "devDependencies": {

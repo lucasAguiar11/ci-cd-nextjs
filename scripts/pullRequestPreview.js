@@ -1,4 +1,5 @@
 import { execSync } from "child_process";
+import fetch from 'node-fetch'
 
 console.log("[DEPLOY_PREVIEW] Starting deploy preview script");
 

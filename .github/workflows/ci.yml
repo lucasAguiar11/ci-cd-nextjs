@@ -16,3 +16,15 @@ jobs:
 
       - name: Run linter
         run: yarn lint
+
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run install
+        run: yarn install
+
+      - name: Run preview deploy
+        run: yarn deploy:preview
+

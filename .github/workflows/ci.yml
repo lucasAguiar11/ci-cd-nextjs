@@ -34,3 +34,19 @@ jobs:
 
       - name: Run preview deploy
         run: yarn deploy:preview
+
+  test_e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cypress
+      - uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+
+      - name: Run install
+        run: yarn install
+
+      - name: Run test e2e
+        run: yarn test:e2e

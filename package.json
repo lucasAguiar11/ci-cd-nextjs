@@ -5,6 +5,7 @@
   "author": "Lucas Aguiar <lucas.abreu@redeceler.com.br>",
   "license": "MIT",
   "dependencies": {
+    "eslint-plugin-prettier": "^4.0.0",
     "next": "^12.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -13,6 +14,14 @@
     "dev": "next dev",
     "build": "rm -rf build && next export && mv out build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "vercel": "^25.0.0"
   }
 }

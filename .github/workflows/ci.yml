@@ -39,14 +39,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Cypress
-      - uses: cypress-io/github-action@v4
+      - uses: actions/setup-node@v3
         with:
+          node-version: 16.13.0
+          cache: 'yarn'
+      # https://docs.cypress.io/guides/continuous-integration/github-actions#Testing-in-Chrome-and-Firefox-with-Cypress-Docker-Images
+      - name: Cypress
+        uses: cypress-io/github-action@v4
+        with: 
           browser: chrome
 
       - name: Run install
         run: yarn install
 
-      - name: Run test e2e
+      - name: Run test
         run: yarn test:e2e

@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Run install
+        run: yarn install
+
       - name: Run linter
         run: yarn link
-
